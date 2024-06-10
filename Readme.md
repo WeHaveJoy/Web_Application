@@ -62,3 +62,13 @@ created index.html for the structure of the web app, for the sigup and login for
 
 Sign-up or login as a user
 Once you're logged in, you can view the device data by clicking the link for viewing data.
+
+# What's working
+
+ - User can be registered and logged in, their details are stored in the database
+ - Device data is stored into the database
+
+ # what's not working
+
+ - Device data is not showing when the user is logged in.
+ 
