@@ -1,0 +1,32 @@
+{
+  "name": "vite-project",
+  "private": true,
+  "version": "0.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --timeout 10000",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@alpinejs/persist": "^3.10.3",
+    "axios": "^0.26.1",
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
+    "koa": "^2.13.4",
+    "mocha": "^9.2.2",
+    "pg-promise": "^10.11.1",
+    "supertest": "^6.2.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  },
+  "keywords": [
+    "mocha",
+    "alpine"
+  ],
+  "author": "Sinovuyo",
+  "license": "ISC"
+}

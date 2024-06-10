@@ -1,0 +1,20 @@
+{
+  "name": "vite-project",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build --mode PRODUCTION",
+    "preview": "vite preview"
+   
+  },
+  "devDependencies": {
+    "vite": "^2.9.9"
+  },
+  "dependencies": {
+    "@alpinejs/persist": "^3.10.3",
+    "alpine": "^0.2.1",
+    "alpinejs": "^3.10.2",
+    "axios": "^0.27.2"
+  }
+}
