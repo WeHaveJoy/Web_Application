@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: black;
+  margin-top: 60px;
+  /* margin-left: 10em; */
+
+
+}
+.welcomePage{
+  font-size: large;
+  margin: 2em;
+}
+.redText{
+  color: red;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+.landing{
+  background-color: #A3B18A;
+  padding: 2em;
+}
+.container {
+
+
+  background-color: #b6c9bb;
+  /* background-image: url(/lab.jpeg); */
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: black;
+  /* width: 970px; */
+  margin-top: 65px;
+  height: 80vh;
+}
+
+
+
+.landing{
+   background-color: #bfedc1;
+  list-style-type: none;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+}
+.navbar-brand{
+  font-style: oblique;
+  
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 50px;
+  width: 970px;
+  margin: 0 auto;
+  background-color: #aaacb0; 
+  color: rgb(146, 71, 71);
+  text-align: center;
+
+}
+
+
+
+.sortOut{
+  height: 8em;
+}
+
+.sort{
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 4em;
+}
+
+.footer div {
+  display: inline-block;
+  margin: 0 5px;
+  justify-content: space-inbetween;
+  padding-left: 25em;
+  padding-right: 25em;
+  margin: 1em;
+}
+
+.form-control {
+
+  width: 25%;
+  text-align: center;
+  margin-left: 38%;
+
+}
+
+.loginForm {
+  border-radius: 10px;
+  padding: 10px;
+  /* border: solid; */
+  border: 1px solid #9C9C9C;
+  background-color: #EAEAEA;
+}
+
+.navBackground{
+  background-color: #31572C;
+}
+
+.button {
+  background-color: #78b87a;
+  border: none;
+  color: black;
+  padding: 7px 17px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  border-radius: 10px;
+  justify-content: space-inbetween
+}
+
+
+
+.funky {
+  font-family: 'Dancing Script', cursive;
+  font-family: 'Lobster', cursive;
+
+}
+
+.someText {
+  width: 60em;
+  height: 20em;
+}
+
+.card {
+  /* padding-left: 18rem; */
+  margin-left: 7rem;
+  font-size: medium;
+  background-color: whitesmoke;
+  justify-content: first baseline;
+  margin: auto
+}
+
+.p{
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+
+
+
+.containerDisplay .card
+{
+ 
+    max-width: 300px;
+    height: 215px;
+    margin: 30px 10px;
+    padding: 20px 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    transition: 0.3s ease-in-out;
+}
+.containerDisplay .card:hover
+{
+    height: 450px;
+
+}
+input[type=text], input[type=password] {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.containerDisplay .card {
+
+  max-width: 300px;
+  height: 215px;
+  margin: 30px 10px;
+  padding: 20px 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  transition: 0.3s ease-in-out;
+}
+
+.containerDisplay .card:hover {
+  height: 45em;
+}
+
+.containerDisplay .card .imgContainer {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  top: -50px;
+  left: 10px;
+  z-index: 1;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.containerDisplay .card .imgContainer img {
+  max-width: 100%;
+  border-radius: 4px;
+}
+
+.containerDisplay .card .content {
+  position: relative;
+  margin-top: -140px;
+  padding: 10px 15px;
+  text-align: center;
+  color: #111;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease-in-out;
+}
+
+.containerDisplay .card:hover .content {
+ 
+  visibility: visible;
+  opacity: 1;
+  margin-top: -40px;
+  transition-delay: 0.3s;
+}
+
+@media (max-width: 330px) {
+  .containerDisplay .card .imgContainer {
+    left: -2px;
+  }
+}

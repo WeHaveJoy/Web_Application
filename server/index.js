@@ -27,7 +27,7 @@ app.use(express.static("client"));
 // THE CORES ARE ADDED FOR HEROKU AND THEY ARE USED ON ALL MY ROUTES
 const cors = require('cors');
 app.use((req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "https://wehavejoy.github.io/computer_literacy/");
+    res.setHeader("Access-Control-Allow-Origin", "https://wehavejoy.github.io/Web_Application/");
     res.header(
         "Access-Control-Allow-Headers",
         "Origin, X-Requested-With, Content-Type, Accept"

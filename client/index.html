@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lobster&display=swap');
+  </style>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Acme&family=Dancing+Script:wght@700&family=Lobster&display=swap');
+  </style>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <title>Computer Literacy</title>
+</head>
+
+<body>
+  <div id="app">
+    <div class="container" x-data="info">
+      <nav class="navbar navbar-inverse navBackground">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">e-Learn</a>
+
+          </div>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home </a></li>
+
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+
+            <li><a href="#" , @click="showContent() , showHomeFunc()"><span
+                  class="glyphicon glyphicon-user"></span> Login</a></li>
+
+            <li><a href="#" , @click="show=true , showHomeFunc()"><span class="glyphicon glyphicon-log-in"></span>
+                Signup</a></li>
+            <li><a href="#" , @click="logoutFunc()"><span class="glyphicon glyphicon-user"></span>
+                Logout</a></li>
+          </ul>
+
+        </div>
+      </nav>
+      <div class="landing" x-show="!showHome">
+
+        <h2>
+          Welcome!
+        </h2>
+        
+      </div>
+      <div>
+        <div x-show="showHome">
+          <div class="" x-show="show">
+           
+
+            <div x-text="logIn_message"></div>
+            <br>
+            <div x-text="message"></div>
+            <div x-text="error_message"></div>
+            <br>
+            <label for="">Please enter your first name: </label>
+            <input x-model="signUp.first_name" type="text" name="firstname" class="firstname">
+            <br>
+            <br>
+            <label for="">Please enter your last name: </label>
+            <input x-model="signUp.last_name" x-bind:disabled="signUp.first_name === ''" type="text" name="lastname"
+              class="lastname">
+            <br>
+            <br>
+            <label for="">Please enter your username: </label>
+            <input x-model="signUp.username" x-bind:disabled="signUp.last_name === ''" type="text" name="register_user"
+              class="register">
+            <br>
+            <br>
+            <label>Please enter your password: </label>
+            <input x-model="signUp.password" x-bind:disabled="signUp.username === ''" type="password"
+              name="register_password" class="register">
+            <br>
+            <br>
+          
+
+
+        </div>
+
+        <div class="login">
+          <div class="" x-show="showLoginForm">
+            <h3 class="text-center text-info">Login</h3>
+
+            <div x-text="logIn_message"></div>
+            <div x-text="error_message"></div>
+            <br>
+            <label>Please enter your username: </label>
+            <br>
+            <input x-model="signIn.username" type="text" name="login_user" class="login">
+            <br>
+            <br>
+            <label>Please enter your password: </label>
+            <br>
+            <input x-model="signIn.password" type="password" name="login_password" class="login">
+            <br>
+            <input type="button" @click="logUser(), hideLogin()" name="action" value="login" class="button">
+          </div>
+        </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <script type="module" src="./main.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

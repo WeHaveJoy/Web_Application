@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-    base: 'computer_literacy',
+    base: 'Web_Application',
 })
