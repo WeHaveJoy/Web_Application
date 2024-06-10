@@ -163,7 +163,21 @@ export default function Web_Application() {
                     console.log(err)
                 })
         },
-        
+
+
+
+        displayData() {
+
+            axios
+                .get(`${remote_url}/api/device_data`)
+                .then(results => {
+                    this.computers = results.data.theData;
+
+                    console.log(results.data.theData);
+                    setInterval(() => { }, 4000);
+                    return true;
+                }).catch(e => console.log(e))
+        },
 
         
         logoutFunc() {

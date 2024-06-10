@@ -24,8 +24,8 @@ module.exports = (app, db) => {
                 const pass = await bcrypt.hash(password, 10);
 
                 await db.none(
-                    `INSERT INTO the_user (first_name, last_name, username, password) VALUES ($1,$2,$3)`,
-                    [first_name, last_name, username]
+                    `INSERT INTO the_user (first_name, last_name, username, password) VALUES ($1,$2,$3,$4)`,
+                    [first_name, last_name, username, pass]
                 );
             }
             res.status(200).json({
@@ -83,47 +83,25 @@ module.exports = (app, db) => {
     });
 
 
-    // Define a POST endpoint to insert data
-app.post('/insertData', async (req, res) => {
-    const {
-      device,
-      time,
-      snr,
-      station,
-      data,
-      avgSnr,
-      lat,
-      lng,
-      rssi,
-      seqNumber,
-    } = req.body;
-  
-    const query = `
-      INSERT INTO device_data (device_id, time, snr, station, data, avg_snr, lat, lng, rssi, seq_number)
-      VALUES ($1, to_timestamp($2), $3, $4, $5, $6, $7, $8, $9, $10)
-    `;
-  
-    const values = [
-      device,
-      time,
-      snr,
-      station,
-      data,
-      avgSnr,
-      lat,
-      lng,
-      rssi,
-      seqNumber,
-    ];
-  
-    try {
-      await client.query(query, values);
-      console.log('Data inserted successfully');
-      res.status(200).send('Data inserted successfully');
-    } catch (error) {
-      console.error('Error inserting data:', error);
-      res.status(500).send('Error inserting data');
-    }
-  });
+    app.get("/api/device_data", async (req, res) => {
+
+        try {
+            
+
+            const display_data = await db.manyOrNone(`SELECT * FROM device_data`);
+
+            res.status(200).json({
+
+                theData: display_data
+            });
+
+        } catch (error) {
+            // console.log(error.message);
+            res.status(500).json({
+                error: error.message,
+            });
+        }
+    })
+
 
 }

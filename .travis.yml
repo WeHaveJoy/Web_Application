@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+
+- 18.2.0
+
+env: 
+  - DATABASE_URL=postgresql://sino123@localhost:5432/postgres
+
+before_script:
+- npm install
+- psql -c 'create database postgres;' -U postgres
+- psql -U postgres -d postgres -a -f ./sql/tables.sql
+- psql -U postgres -d postgres -a -f ./sql/data.sql
+
+services: 
+- postgresql

@@ -14,7 +14,7 @@
     @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Acme&family=Dancing+Script:wght@700&family=Lobster&display=swap');
   </style>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <title>Computer Literacy</title>
+  <title>Web App</title>
 </head>
 
 <body>
@@ -23,37 +23,50 @@
       <nav class="navbar navbar-inverse navBackground">
         <div class="container-fluid">
           <div class="navbar-header">
-            <a class="navbar-brand" href="#">e-Learn</a>
-
+            <a class="navbar-brand" href="#">e-Data</a>
           </div>
+
+
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home </a></li>
-
-          </ul>
+        
+              </ul>
+          
 
           <ul class="nav navbar-nav navbar-right">
 
-            <li><a href="#" , @click="showContent() , showHomeFunc()"><span
+            <li><a href="#" , @click="showContent() , showHomeFunc(), displayData()"><span
                   class="glyphicon glyphicon-user"></span> Login</a></li>
-
+                  <li><a href="data" , @click="displayData()">Show Device Data</a></li>
+                
             <li><a href="#" , @click="show=true , showHomeFunc()"><span class="glyphicon glyphicon-log-in"></span>
                 Signup</a></li>
             <li><a href="#" , @click="logoutFunc()"><span class="glyphicon glyphicon-user"></span>
                 Logout</a></li>
           </ul>
-
+        
+    
         </div>
       </nav>
+
+      
+
       <div class="landing" x-show="!showHome">
 
         <h2>
           Welcome!
+          <br>
+          <br>
+          <p>Please signup or login if you have an account</p>
         </h2>
         
       </div>
+
+
+
       <div>
         <div x-show="showHome">
-          <div class="" x-show="show">
+          <div class="" x-show="show, hideLogin()">
            
 
             <div x-text="logIn_message"></div>
@@ -71,7 +84,7 @@
             <br>
             <br>
             <label for="">Please enter your username: </label>
-            <input x-model="signUp.username" x-bind:disabled="signUp.last_name === ''" type="text" name="register_user"
+            <input placeholder="username@gmail.com" x-model="signUp.username" x-bind:disabled="signUp.last_name === ''" type="text" name="register_user"
               class="register">
             <br>
             <br>
@@ -82,6 +95,11 @@
             <br>
           
 
+            <br>
+            <br>
+
+            <input type="button" x-bind:disabled="signUp.password === ''" @click="regUser(), goToLogin(), showContent()" name="action"
+              value="Register" class="button">
 
         </div>
 
@@ -94,23 +112,32 @@
             <br>
             <label>Please enter your username: </label>
             <br>
-            <input x-model="signIn.username" type="text" name="login_user" class="login">
+            <input x-model="signIn.username" type="text" name="login_user" class="login" placeholder="username@gmail.com">
             <br>
             <br>
             <label>Please enter your password: </label>
             <br>
             <input x-model="signIn.password" type="password" name="login_password" class="login">
             <br>
-            <input type="button" @click="logUser(), hideLogin()" name="action" value="login" class="button">
+            <input type="button" @click="logUser(), hideLogin(), displayData()" name="action" value="login" class="button">
           </div>
         </div>
 
         </div>
-
       </div>
-    </div>
+
+      <!-- <div class="data" x-show="!showHome">
+        <ul>
+            <li><a href="#" , @click="showContent() , displayData()"><span></span>Show Device Data</a></li>
+        </ul>
+      </div> -->
 
   </div>
+
+
+    </div>
+
+    
 
   <script type="module" src="./main.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
